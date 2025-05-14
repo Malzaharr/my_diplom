@@ -1,0 +1,34 @@
+<?php
+header('Content-Type: application/json; charset=utf-8'); // Важно!
+
+$servername = "localhost"; // Замените на свой хост
+$username = "root"; // Замените на свое имя пользователя
+$password = ""; // Замените на свой пароль
+$dbname = "test"; // Замените на имя своей базы данных
+
+// Создаем соединение
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Проверяем соединение
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// SQL-запрос
+$sql = "SELECT id, name, description, price FROM products"; // Замените на свой запрос
+$result = $conn->query($sql);
+
+$products = array();
+
+if ($result->num_rows > 0) {
+    // Выводим данные каждой строки
+    while($row = $result->fetch_assoc()) {
+        $products[] = $row;
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+
+echo json_encode($products, JSON_UNESCAPED_UNICODE); // Важно!
+?>

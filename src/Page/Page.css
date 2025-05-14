@@ -1,0 +1,72 @@
+/* Общие стили */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Светло-серый фон */
+  color: #333; /* Темно-серый текст */
+}
+
+/* Стили для Header.jsx */
+header {
+  background-color: #eeeeee;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between; /* Размещает элементы по краям */
+  align-items: center; /* Выравнивает элементы по вертикали */
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Небольшая тень */
+  width: 100%; /* Занимает всю доступную ширину */
+  margin: 0; /* Убираем отступы (если есть) */
+  box-sizing: border-box; /* Важно для правильного расчета ширины с учетом padding */
+}
+
+header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Уберите эти стили из header, они для кнопок, а не для header */
+/*
+header span {
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+header span:hover {
+  background-color: #eee;
+  border-color: #bbb;
+}
+*/
+
+/* Стили для Main_Page.jsx */
+main {
+  padding: 2rem;
+  text-align: center;
+}
+
+main h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+header > div { /*  Контейнер для TabsSelection1 */
+  display: flex;
+  gap: 10px; /* Расстояние между кнопками */
+}
+
+/*  Стили для кнопок внутри TabsSelection1 (если Button - это компонент)  */
+/*  Предполагаю, что ваши кнопки - это элементы Button  */
+section { /* Или какой тег использует TabsSelection1 */
+  display: flex; /* Добавляем flex к секции, если кнопки  */
+  gap: 10px;  /* Расстояние между кнопками */
+}

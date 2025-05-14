@@ -1,0 +1,286 @@
+/* Общие стили */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .App-header {
+    background-color: #c62a88; /* Wildberries purple */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .App-footer {
+    background-color: #c62a88;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    margin-top: auto;
+  }
+  
+  .table-selector {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+  
+  .table-selector button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #ff6600; /* Wildberries orange */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .table-selector button:hover {
+    background-color: #e65100;
+  }
+  
+  .content {
+    padding: 1rem;
+    flex-grow: 1;
+  }
+  
+  /* Стили для таблиц */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  th, td {
+    padding: 0.75rem; /* Важно для выравнивания */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top; /* Выравнивание по верху для лучшего вида */
+  }
+  
+  th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tbody tr:hover {
+    background-color: #e9e9e9;
+  }
+  
+  /* Mobile-friendly styles */
+  @media (max-width: 600px) {
+    .table-selector {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .table-selector button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+  
+    table {
+        font-size: 0.8rem;
+    }
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Стили для редактируемых полей */
+  .edit-input, .add-input {
+    width: 100%; /* Занимают всю ширину ячейки */
+    padding: 5px;
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block; /* Важно для выравнивания */
+  }
+  
+  /* Стили для кнопок действий */
+  .edit-button,
+  .delete-button,
+  .save-button,
+  .cancel-button,
+  .add-button {
+    padding: 0.375rem 0.75rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0.25rem;
+    color: white;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 0.875rem;
+  }
+  
+  .edit-button {
+    background-color: #007bff; /* Bootstrap primary */
+  }
+  
+  .edit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .delete-button {
+    background-color: #dc3545; /* Bootstrap danger */
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333;
+  }
+  
+  .save-button {
+    background-color: #28a745; /* Bootstrap success */
+  }
+  
+  .save-button:hover {
+    background-color: #218838;
+  }
+  
+  .cancel-button {
+    background-color: #6c757d; /* Bootstrap secondary */
+  }
+  
+  .cancel-button:hover {
+    background-color: #545b62;
+  }
+  
+  .add-button {
+    background-color: #17a2b8; /* Bootstrap info */
+  }
+  
+  .add-button:hover {
+    background-color: #138496;
+  }
+  .add-order-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .order-form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .order-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .order-form select,
+  .order-form input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Важно для правильного расчета ширины с padding */
+  }
+  
+  .products-list {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы друг под другом */
+    margin-bottom: 15px;
+  }
+  
+  .product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #eee;
+    margin-bottom: 5px;
+    border-radius: 4px;
+  }
+  
+  .add-product-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .selected-products {
+    margin-bottom: 15px;
+  }
+  
+  .selected-product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 4px;
+  }
+  
+  .remove-product-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-order-button,
+  .cancel-order-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .cancel-order-button {
+    background-color: #6c757d;
+  }
+  
+  .notifications-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .notification {
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+  }
