@@ -30,7 +30,7 @@ export default function Main_Page() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const response = await fetch("api/get_products.php"); // Замените на ваш API
+        const response = await fetch("https://f253jk63-3000.euw.devtunnels.ms/products"); // Замените на ваш API
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

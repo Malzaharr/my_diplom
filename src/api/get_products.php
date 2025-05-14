@@ -1,5 +1,9 @@
 <?php
-header('Content-Type: application/json; charset=utf-8'); // Важно!
+
+header('Content-Type: application/json; charset=utf-8');
+header('Access-Control-Allow-Origin: http://localhost:5173/'); // РАЗРЕШИТЬ ТОЛЬКО С ЭТОГО ДОМЕНА
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type');
 
 $servername = "localhost"; // Замените на свой хост
 $username = "root"; // Замените на свое имя пользователя
